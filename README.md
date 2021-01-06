@@ -6,7 +6,6 @@ Built with Python 3.9
 # install
 pip install -r requirements.txt
 
-# run
 # To run the GUI
 python3 cc.py
 or
