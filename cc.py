@@ -10,7 +10,7 @@ from PyQt5 import uic
 
 
 
-Ui_Gen, baseClass = uic.loadUiType('templates/creator.ui')
+Ui_Gen, baseClass = uic.loadUiType('creator.ui')
 
 
 class CCGen(baseClass, Ui_Gen):
@@ -19,25 +19,31 @@ class CCGen(baseClass, Ui_Gen):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
 
-        self.genButton.clicked.connect(self.generate)
-        
+        self.genButton.clicked.connect(self.generate) 
+    
+    
     def generate(self):
         #empty the text box
-        # self.ccdataBox = qtw.QPlainTextEdit()
         self.ccdataBox.clear()
-        cctype = self.cc_type.itemText(self.cc_type.currentIndex())
-        fake = Faker('en_US')
-        count = int(self.spinBox.text())
-        ccdata = ""
-        
-        if str(cctype).lower() != "choose card type":
-            for _ in range(count):
-                ccdata += fake.credit_card_full(str(cctype).lower())
-                ccdata += "\n"
-        else:
-            ccdata = "Please Choose Card Type"
-        
+        self.cctype = self.cc_type.itemText(self.cc_type.currentIndex())
+        self.count = int(self.spinBox.text())
+        ccdata = makeFake(self.cctype, self.count)        
         self.ccdataBox.setPlainText(ccdata)
+
+def makeFake(cctype: str, count: int) -> str:
+    fake = Faker()
+    fake.seed_locale('en_US',0)
+    ccdata = ""
+    
+    if str(cctype).lower() != "choose card type":
+        for _ in range(count):
+            ccdata += fake.credit_card_full(str(cctype).lower())
+            ccdata += "\n"
+    else:
+        ccdata = "Please Choose Card Type"
+
+    return ccdata
+
 
 if __name__ == '__main__':
     app = qtw.QApplication(sys.argv)
