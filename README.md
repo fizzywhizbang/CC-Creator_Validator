@@ -18,4 +18,11 @@ or
 chmod u+x ccgen.py
 ./ccgen.py
 
+# The validator
+The validator is command line only unless someone really needs it as a GUI
+python3 validator.py "ccnumber"
+or
+chmod u+x validator.py
+./validator.py "ccnumber"
+
 Enjoy
