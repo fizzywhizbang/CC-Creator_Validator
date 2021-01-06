@@ -1,4 +1,8 @@
 # CC-Creator_Validator
+!!! Important note
+These are not real credit card numbers
+These are only for testing ECommerce applications
+
  
 # Python Version
 Built with Python 3.9
