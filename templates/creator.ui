@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>463</width>
+    <height>234</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Credit Card Generator</string>
+  </property>
+  <widget class="QPlainTextEdit" name="ccdataBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>441</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>377</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QComboBox" name="cc_type">
+      <property name="currentText">
+       <string>Choose Card Type</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Choose Card Type</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Amex</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Diners</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Discover</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>JCB</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>JCB15</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>JCB16</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Maestro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mastercard</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Visa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Visa13</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Visa16</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Visa19</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="genButton">
+      <property name="text">
+       <string>Generate Card(s)</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
