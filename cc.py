@@ -42,7 +42,7 @@ def makeFake(cctype: str, count: int) -> str:
         for _ in range(count):
             ccdata += fake.credit_card_full(str(cctype).lower())
             ccdata += fake.ssn()
-            ccdata += "\n"
+            ccdata += "\n\n"
     else:
         ccdata = "Please Choose Card Type"
 
