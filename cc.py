@@ -29,15 +29,19 @@ class CCGen(baseClass, Ui_Gen):
         self.count = int(self.spinBox.text())
         ccdata = makeFake(self.cctype, self.count)        
         self.ccdataBox.setPlainText(ccdata)
+        f = open(self.cctype + "-ccfile.txt", "w")
+        f.write(ccdata)
+        f.close()
 
 def makeFake(cctype: str, count: int) -> str:
     fake = Faker()
-    fake.seed_locale('en_US',0)
+    fake.seed_locale('en_US',2)
     ccdata = ""
     
     if str(cctype).lower() != "choose card type":
         for _ in range(count):
             ccdata += fake.credit_card_full(str(cctype).lower())
+            ccdata += fake.ssn()
             ccdata += "\n"
     else:
         ccdata = "Please Choose Card Type"
